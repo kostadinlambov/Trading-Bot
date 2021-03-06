@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  trading-db:
+    image: mariadb:10.4
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'trading_bot_db'
+      MYSQL_ROOT_PASSWORD: 'tradingbot'
+    ports:
+      - '3306:3306'
+    volumes:
+      - trading-dev-db:/var/lib/mysql
+
+volumes:
+  trading-dev-db: { }
