@@ -47,7 +47,7 @@ public class ApplicationSecurityConfiguration
         .disable()
         .authorizeRequests()
         .antMatchers("/api/user/register",
-//                        "/**",
+            "/**",
             "/favicon.ico",
             "/**/*.png",
             "/**/*.gif",
@@ -96,7 +96,9 @@ public class ApplicationSecurityConfiguration
     final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     CorsConfiguration config = new CorsConfiguration().applyPermitDefaultValues();
     config.setAllowCredentials(true);
-    config.addAllowedOrigin("*");
+//    config.addAllowedOrigin("*");
+//    config.addAllowedOriginPattern("*");
+    config.addAllowedOriginPattern("http://localhost:3000");
     config.addAllowedHeader("*");
     config.addAllowedMethod("OPTIONS");
     config.addAllowedMethod("HEAD");
