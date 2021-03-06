@@ -58,11 +58,9 @@ public class UserServiceImpl implements UserService {
   @Override
   @Transactional(isolation = Isolation.REPEATABLE_READ)
   public UserCreateViewModel createUser(UserRegisterBindingModel userRegisterBindingModel) {
-//        this.loggerService.createLog("POST", userServiceModel.getUsername(), "users", "register");
-
-    if (!this.userValidation.isValid(userRegisterBindingModel)) {
-      throw new TradingBotException(INVALID_CREDENTIALS, ErrorCodeEnum.SERVER_ERROR);
-    }
+    userValidation.isPasswordMatching(userRegisterBindingModel.getPassword(),
+        userRegisterBindingModel.getConfirmPassword());
+    userValidation.isValid(userRegisterBindingModel);
 
     User user = UserMapper.mapToUser(userRegisterBindingModel);
 
@@ -108,114 +106,12 @@ public class UserServiceImpl implements UserService {
   }
 
   private UserRole getUserRoleByAuthority(String authority) {
-    return this.roleRepository.getByAuthority(authority)
+    Optional<UserRole> byAuthority = this.roleRepository.getByAuthority(authority);
+    return byAuthority
         .filter(userRoleValidation::isValid)
         .orElseThrow(() -> new TradingBotException(USER_ROLE_NOT_FOUND_ERROR_MESSAGE,
             ErrorCodeEnum.DB_ERROR));
   }
-
-  //    @Override
-//    public boolean updateUser(UserServiceModel userServiceModel, String loggedInUserId) throws Exception {
-//        if (!userValidation.isValid(userServiceModel)) {
-//            throw new Exception(SERVER_ERROR_MESSAGE);
-//        }
-//
-//        User userToEdit = this.userRepository.findById(userServiceModel.getId()).orElse(null);
-//        User loggedInUser = this.userRepository.findById(loggedInUserId).orElse(null);
-//
-//        if (!userValidation.isValid(userToEdit) || !userValidation.isValid(loggedInUser)) {
-//            throw new Exception(SERVER_ERROR_MESSAGE);
-//        }
-//
-//        if (!userServiceModel.getId().equals(loggedInUserId)) {
-//            String userAuthority = this.getUserAuthority(loggedInUserId);
-//            if (!("ROOT").equals(userAuthority) && !("ADMIN").equals(userAuthority)) {
-//                throw new CustomException(UNAUTHORIZED_SERVER_ERROR_MESSAGE);
-//            }
-//        }
-//
-//        User userEntity = this.modelMapper.map(userServiceModel, User.class);
-//        userEntity.setPassword(userToEdit.getPassword());
-//        userEntity.setAuthorities(userToEdit.getAuthorities());
-//
-//        return this.userRepository.save(userEntity) != null;
-//    }
-//
-//    @Override
-//    public UserServiceModel updateUserOnlineStatus(String userName, boolean changeToOnline) throws Exception {
-//        User user = this.userRepository.findByUsername(userName)
-//                .filter(userValidation::isValid)
-//                .orElseThrow(() -> new CustomException(SERVER_ERROR_MESSAGE));
-//
-//        if(changeToOnline){
-//            user.setOnline(true);
-//        }else {
-//            user.setOnline(false);
-//        }
-//
-//        User updatedUser = this.userRepository.save(user);
-//
-//        if (updatedUser != null) {
-//            return this.modelMapper.map(updatedUser, UserServiceModel.class);
-//        }
-//
-//        throw new CustomException(SERVER_ERROR_MESSAGE);
-//    }
-//
-//
-//    @Override
-//    public List<UserServiceModel> getAllUsers(String userId) throws Exception {
-//        User userById = this.userRepository.findById(userId).orElse(null);
-//
-//        if (!userValidation.isValid(userById)) {
-//            throw new Exception(SERVER_ERROR_MESSAGE);
-//        }
-//
-//        List<UserRole> userRoles = this.getUserRoles(userById);
-//
-//        if (userRoles.size() > 0) {
-//            return this.userRepository
-//                    .findAll()
-//                    .stream()
-//                    .map(x -> this.modelMapper.map(x, UserServiceModel.class))
-//                    .collect(Collectors.toList());
-//        }
-//
-//        throw new CustomException(UNAUTHORIZED_SERVER_ERROR_MESSAGE);
-//    }
-//
-//    @Override
-//    public UserDetailsViewModel getById(String id) throws Exception {
-//        User user = this.userRepository.findById(id)
-//                .filter(userValidation::isValid)
-//                .orElseThrow(Exception::new);
-//
-//        return this.modelMapper.map(user, UserDetailsViewModel.class);
-//    }
-//
-//    @Override
-//    public UserEditViewModel editById(String id) throws Exception {
-//        User user = this.userRepository.findById(id)
-//                .filter(userValidation::isValid)
-//                .orElseThrow(Exception::new);
-//
-//        return this.modelMapper.map(user, UserEditViewModel.class);
-//    }
-//
-
-//    @Override
-//    public boolean deleteUserById(String id) throws Exception {
-//       this.userRepository.findById(id)
-//                .filter(userValidation::isValid)
-//                .orElseThrow(Exception::new);
-//
-//        try {
-//            this.userRepository.deleteById(id);
-//            return true;
-//        } catch (Exception e) {
-//            throw new Exception(SERVER_ERROR_MESSAGE);
-//        }
-//    }
 
   private List<UserRole> getUserRoles(User userById) {
     return userById

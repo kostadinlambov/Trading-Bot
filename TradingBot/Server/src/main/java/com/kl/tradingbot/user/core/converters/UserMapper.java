@@ -8,12 +8,17 @@ public final class UserMapper {
   private UserMapper() {
   }
 
-
-  public static User mapToUser(UserRegisterBindingModel userLoginBindingModel) {
-    if (userLoginBindingModel == null) {
+  public static User mapToUser(UserRegisterBindingModel in) {
+    if (in == null) {
       return null;
     }
 
-    return null;
+    return User.builder(null, in.getUsername(), in.getEmail())
+        .withFirstName(in.getFirstName())
+        .withLastName(in.getLastName())
+        .withPassword(in.getPassword())
+        .withProfilePicUrl(in.getProfilePicUrl())
+        .build();
+
   }
 }

@@ -46,7 +46,7 @@ public class ApplicationSecurityConfiguration
         .csrf()
         .disable()
         .authorizeRequests()
-        .antMatchers("/users/register",
+        .antMatchers("/api/user/register",
 //                        "/**",
             "/favicon.ico",
             "/**/*.png",
@@ -58,41 +58,22 @@ public class ApplicationSecurityConfiguration
             "/**/*.js"
         ).permitAll()
         .antMatchers(
-            "/users/details/*",
-            "/users/update/*",
-            "/relationship/friends/*",
-            "/relationship/findFriends/*",
-            "/relationship/addFriend",
-            "/relationship/removeFriend",
-            "/relationship/acceptFriend",
-            "/relationship/cancelRequest",
-            "/relationship/search",
-            "/pictures/all/*",
-            "/pictures/add",
-            "/pictures/remove",
-            "/post/create",
-            "/post/remove",
-            "/like/add",
-            "/comment/create",
-            "/comment/remove",
-            "/post/all/*",
-            "/message/create",
-            "/message/all/*",
-            "/message/friend",
+            "/api/user/details/*",
+            "/api/user/update/*",
             "/socket/**"
         ).hasAnyAuthority("ADMIN", "ROOT", "USER")
         .antMatchers(
-            "/users/promote",
-            "/users/demote",
-            "/users/all/*",
-            "/users/details/username",
-            "/logs/all",
-            "/logs/findByUserName/*"
+            "/api/user/promote",
+            "/api/user/demote",
+            "/api/user/all/*",
+            "/api/user/details/username",
+            "/api/logs/all",
+            "/api/logs/findByUserName/*"
         ).hasAnyAuthority("ADMIN", "ROOT")
         .antMatchers(
-            "/users/delete/*",
-            "/logs/clear",
-            "/logs/clearByName/*"
+            "/api/user/delete/*",
+            "/api/logs/clear",
+            "/api/logs/clearByName/*"
         ).hasAuthority("ROOT")
         .requestMatchers(EndpointRequest.toAnyEndpoint()).hasAnyAuthority("ADMIN", "ROOT", "USER")
         .anyRequest().authenticated()

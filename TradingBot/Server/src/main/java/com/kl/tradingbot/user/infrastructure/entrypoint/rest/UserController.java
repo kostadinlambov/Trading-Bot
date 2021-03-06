@@ -1,8 +1,30 @@
 package com.kl.tradingbot.user.infrastructure.entrypoint.rest;
 
+import com.kl.tradingbot.user.core.services.UserService;
+import com.kl.tradingbot.user.infrastructure.common.model.UserCreateViewModel;
+import com.kl.tradingbot.user.infrastructure.common.model.UserRegisterBindingModel;
+import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/api/user")
 public class UserController {
+
+  private final UserService userService;
+
+  @Autowired
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
+
+  @PostMapping(value = "/register")
+  public UserCreateViewModel registerUser(
+      @RequestBody @Valid UserRegisterBindingModel userRegisterBindingModel) {
+    return userService.createUser(userRegisterBindingModel);
+  }
 
 }

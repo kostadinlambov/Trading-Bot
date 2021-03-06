@@ -16,4 +16,6 @@ public interface UserValidationService {
   boolean isValid(UserUpdateBindingModel userUpdateBindingModel);
 
   boolean isValid(UserDetails userData);
+
+  void isPasswordMatching(String password, String confirmPassword);
 }

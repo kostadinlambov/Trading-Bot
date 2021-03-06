@@ -98,6 +98,7 @@ public class User {
         .append("password", password)
         .append("firstName", firstName)
         .append("lastName", lastName)
+        .append("authorities", authorities)
         .toString();
   }
 
@@ -143,8 +144,6 @@ public class User {
 
     private List<ValidationException.ValidationDetail> validate() {
       List<ValidationException.ValidationDetail> validationDetails = new ArrayList<>();
-      Validator.validateNotEmpty(instance.id, "id").
-          ifPresent(validationDetails::add);
       Validator.validateNotEmpty(instance.username, "username")
           .ifPresent(validationDetails::add);
       Validator.validateNotEmpty(instance.email, "email")

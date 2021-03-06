@@ -7,6 +7,7 @@ public enum ErrorCodeEnum {
   TECHNICAL_ERROR(1099),
   NO_DATA_FOUND(1100),
   UNAUTHORIZED_SERVER(403),
+  BAD_REQUEST_ERROR(404),
   SERVER_ERROR(500);
 
   private final int code;
