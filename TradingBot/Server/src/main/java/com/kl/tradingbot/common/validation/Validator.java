@@ -1,8 +1,8 @@
 package com.kl.tradingbot.common.validation;
 
-import com.kl.tradingbot.common.exception.ErrorCodeEnum;
 import com.kl.tradingbot.common.exception.ValidationException;
 import com.kl.tradingbot.common.exception.ValidationException.ValidationDetail;
+import com.kl.tradingbot.common.exception.model.ErrorCodeEnum;
 import com.kl.tradingbot.common.model.Builder;
 import java.util.Collection;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.kl.tradingbot.common.exception;
+package com.kl.tradingbot.common.exception.model;
 
 public enum ErrorMessageEnum {
   SERVER_ERROR("Server Error"),

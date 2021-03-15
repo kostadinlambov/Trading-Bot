@@ -1,5 +1,6 @@
 package com.kl.tradingbot.common.exception;
 
+import com.kl.tradingbot.common.exception.model.ErrorCodeEnum;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

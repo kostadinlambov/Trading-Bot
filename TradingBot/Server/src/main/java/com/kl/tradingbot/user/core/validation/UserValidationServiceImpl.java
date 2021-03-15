@@ -2,9 +2,9 @@ package com.kl.tradingbot.user.core.validation;
 
 import static com.kl.tradingbot.user.core.common.UserConstants.PASSWORDS_MISMATCH_ERROR_MESSAGE;
 
-import com.kl.tradingbot.common.exception.ErrorCodeEnum;
-import com.kl.tradingbot.common.exception.ErrorMessageEnum;
 import com.kl.tradingbot.common.exception.TradingBotException;
+import com.kl.tradingbot.common.exception.model.ErrorCodeEnum;
+import com.kl.tradingbot.common.exception.model.ErrorMessageEnum;
 import com.kl.tradingbot.user.core.model.User;
 import com.kl.tradingbot.user.infrastructure.common.model.UserRegisterBindingModel;
 import com.kl.tradingbot.user.infrastructure.common.model.UserUpdateBindingModel;

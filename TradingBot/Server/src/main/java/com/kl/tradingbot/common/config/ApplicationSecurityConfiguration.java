@@ -47,7 +47,7 @@ public class ApplicationSecurityConfiguration
         .disable()
         .authorizeRequests()
         .antMatchers("/api/user/register",
-            "/**",
+//            "/**",
             "/favicon.ico",
             "/**/*.png",
             "/**/*.gif",

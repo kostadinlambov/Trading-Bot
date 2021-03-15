@@ -1,9 +1,9 @@
 package com.kl.tradingbot.common.filters;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kl.tradingbot.common.exception.ErrorCodeEnum;
-import com.kl.tradingbot.common.exception.ErrorMessageEnum;
 import com.kl.tradingbot.common.exception.TradingBotException;
+import com.kl.tradingbot.common.exception.model.ErrorCodeEnum;
+import com.kl.tradingbot.common.exception.model.ErrorMessageEnum;
 import com.kl.tradingbot.user.infrastructure.common.model.UserLoginBindingModel;
 import com.kl.tradingbot.user.infrastructure.persistence.entities.UserEntity;
 import io.jsonwebtoken.Jwts;
