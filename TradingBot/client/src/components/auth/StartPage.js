@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import userService from '../../infrastructure/userService';
 import './css/StartPage.css';
+import UserContext from '../../Context';
 
 const StartPage = () => {
+    
+    const userContext = useContext(UserContext)
     const isAdmin = userService.isAdmin();
     const isRoot = userService.isRoot();
     const currentUserId = userService.getUserId();
     let StartPageView;
 
-    if (!localStorage.getItem('token')) {
+    console.log('StartPage userContext: ', userContext)
+
+    if (!userContext.loggedIn) {
+        // if (!localStorage.getItem('token')) {
         StartPageView = (
             <div>
                 <div className="container text-center start-page-margin" >

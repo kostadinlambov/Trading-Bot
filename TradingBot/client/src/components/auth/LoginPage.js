@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
 import { ToastComponent } from "../common";
 import "../../styles/FormPages.css";
 
 import { requester } from "./../../infrastructure";
 import { useHistory } from "react-router";
+import UserContext from "./../../Context";
+import userService from "./../../infrastructure/userService";
 
 const LoginPage = () => {
+  const userContext = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [touched, setTouched] = useState({
@@ -18,9 +21,6 @@ const LoginPage = () => {
   const onChangeHandler = (e) => {
     const stateKey = e.target.name;
     const stateValue = e.target.value;
-
-    debugger;
-    console.log("currentStateKey: ", stateValue);
 
     if (stateKey === "username") {
       setUsername(stateValue);
@@ -39,7 +39,6 @@ const LoginPage = () => {
     requester
       .post("/login", { username, password }, (response) => {
         if (response.error) {
-          debugger;
           console.log(" Incorrect credentials!");
           toast.error(
             <ToastComponent.ЕrrorToast text={" Incorrect credentials!"} />,
@@ -59,6 +58,9 @@ const LoginPage = () => {
               position: toast.POSITION.TOP_RIGHT,
             }
           );
+
+          const user = userService.getPayload();
+          userContext.logIn(user);
 
           history.push("/");
         }
