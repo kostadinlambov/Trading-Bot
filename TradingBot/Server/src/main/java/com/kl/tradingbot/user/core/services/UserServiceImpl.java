@@ -1,6 +1,5 @@
 package com.kl.tradingbot.user.core.services;
 
-
 import com.kl.tradingbot.common.exception.TradingBotException;
 import com.kl.tradingbot.common.exception.model.ErrorCodeEnum;
 import com.kl.tradingbot.common.exception.model.ErrorMessageEnum;
@@ -20,6 +19,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.persistence.PersistenceException;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+  private final static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
   public static final String INVALID_CREDENTIALS = "Incorrect credentials";
   public static final String USER_ROLE_NOT_FOUND_ERROR_MESSAGE = "UserRole not found";
@@ -58,6 +61,7 @@ public class UserServiceImpl implements UserService {
   @Override
   @Transactional(isolation = Isolation.REPEATABLE_READ)
   public UserCreateViewModel createUser(UserRegisterBindingModel userRegisterBindingModel) {
+
     userValidation.isPasswordMatching(userRegisterBindingModel.getPassword(),
         userRegisterBindingModel.getConfirmPassword());
     userValidation.isValid(userRegisterBindingModel);
@@ -69,6 +73,7 @@ public class UserServiceImpl implements UserService {
 
     try {
       User savedUser = this.userRepository.saveAndFlush(user);
+      LOGGER.info("Successfully saved user: {}", savedUser);
 
       if (savedUser != null) {
         return this.modelMapper.map(savedUser, UserCreateViewModel.class);

@@ -90,6 +90,13 @@
       <version>0.9.1</version>
     </dependency>
 
+    <!-- Logging  -->
+    <dependency>
+      <artifactId>logstash-logback-encoder</artifactId>
+      <groupId>net.logstash.logback</groupId>
+      <version>6.6</version>
+    </dependency>
+
     <!-- Websocket dependencies-->
     <dependency>
       <artifactId>spring-boot-starter-websocket</artifactId>
