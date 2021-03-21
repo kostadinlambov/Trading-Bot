@@ -1,50 +1,26 @@
-import React,{ Component, Fragment } from 'react';
-import {Route, Switch} from 'react-router-dom';
-import './styles/App.css';
-import StartPage from './components/auth/StartPage';
-import RegisterPage from './components/auth/RegisterPage';
-import LoginPage from './components/auth/LoginPage';
-import ErrorPage from './components/common/ErrorPage';
+import './styles/app.css';
 
-import { ToastContainer, toast, Zoom } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
-import { ToastComponent } from './components/common';
-import userService from './infrastructure/userService';
-
-class App extends Component{
-  constructor(props){
-    super(props)
-
-    this.onLogout = this.onLogout.bind(this);
-  }
-
-  onLogout() {
-    this.props.logout();
-
-    toast.success(<ToastComponent.SuccessToast text={`You have been successfully logged out.`} />, {
-      position: toast.POSITION.TOP_RIGHT
-    });
-
-    this.props.history.push('/login');
-  }
-
-  render() {
-    const loggedIn = userService.isTheUserLoggedIn();
-
-    return (
-      <Fragment>
-        <ToastContainer transition={Zoom} closeButton={false} />
-          <Switch>
-            <Route exact path="/" component={StartPage} />
-            {!loggedIn && <Route exact path="/register" component={RegisterPage} />}
-            {!loggedIn && <Route exact path="/login" component={LoginPage} />}
-            <Route exact path="/error" component={ErrorPage} />
-            <Route component={ErrorPage} />
-          </Switch>
-      </Fragment>
-    )
-  }
-
+function App() {
+  return (
+    <div className="app-container">
+      <header className="App-header">
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+      <footer className="app-footer">
+       <div>This is the footer</div> 
+      </footer>
+    </div>
+  );
 }
 
 export default App;
