@@ -52,11 +52,11 @@ function App() {
 			</ThemeProvider>
 		</AppContainer>
 	);
-}
 
 export default App;
 
 const AppContainer = styled.div`
+
 	text-align: center;
 	background-color: #eee;
 	min-height: 100vh;

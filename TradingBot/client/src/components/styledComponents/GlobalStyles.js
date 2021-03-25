@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   color: var(--app-secondary-color, rgb(35, 201, 157));
 }
 
+
 .app-title-color{
   color: #FFA000
 }
