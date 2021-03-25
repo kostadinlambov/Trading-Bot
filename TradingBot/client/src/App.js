@@ -52,6 +52,7 @@ function App() {
 			</ThemeProvider>
 		</AppContainer>
 	);
+}
 
 export default App;
 
