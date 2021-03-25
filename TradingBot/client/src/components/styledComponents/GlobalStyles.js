@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -12,6 +12,11 @@ const GlobalStyle = createGlobalStyle`
 
 .app-secondary-color {
   color: var(--app-secondary-color, rgb(35, 201, 157));
+}
+
+
+.app-title-color{
+  color: #FFA000
 }
 
 .app-button-primary {
@@ -37,6 +42,21 @@ const GlobalStyle = createGlobalStyle`
   border: 1px solid #fff;
   box-shadow: 0 0 14px 1px rgba(0, 0, 0, 0.3);
 }
-`
+
+.error-text-label{
+  color: red;
+}
+
+.error-text{
+  color: red;
+  position: absolute;
+}
+
+.alert{
+  position: absolute;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+`;
 
 export default GlobalStyle;

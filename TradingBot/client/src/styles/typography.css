@@ -3,17 +3,17 @@
 	--font-size-lv2: 14px;
 	--font-size-lv3: 16px;
 	--font-size-lv4: 18px;
-	--font-size-lv5: 21px;
-	--font-size-lv6: 23px;
 	--spacing-site: 2rem;
 	--color-text-main: #000;
 	--default-box-shadow: 0 0 14px 1px rgba(0, 0, 0, 0.4);
 	--blue-box-shadow: 0px 0px 12px 2px rgba(64, 163, 244, 0.8);
 	--app-primary-color: rgb(22, 163, 254);
+	--app-primary-hover-color: rgb(9, 76, 121);
 	/* color: #16A3FE; */
 	--app-secondary-color: rgb(35, 201, 157);
-  	/* color: #23c99d; */
-
+	--app-secondary-hover-color: rgb(10, 90, 69);
+	/* color: #23c99d; */
+	--app-active-color: #FFA000;
 }
 
 html {
@@ -24,31 +24,19 @@ html {
 
 @media screen and (min-width: 500px) {
 	html {
-		font-size: var(--font-size-lv2, 14px)
+		font-size: var(--font-size-lv2, 14px);
 	}
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
 	html {
-		font-size: var(--font-size-lv3, 16px) 
+		font-size: var(--font-size-lv3, 16px);
 	}
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1600px) {
 	html {
-		font-size: var(--font-size-lv4, 18px) 
-	}
-}
-
-@media screen and (min-width: 1300px) {
-	html {
-		font-size: var(--font-size-lv5, 21px) 
-	}
-}
-
-@media screen and (min-width: 1800px) {
-	html {
-		font-size: var(--font-size-lv6, 23px)
+		font-size: var(--font-size-lv4, 18px);
 	}
 }
 
@@ -61,7 +49,7 @@ input,
 textarea,
 option,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 h1,
@@ -75,12 +63,29 @@ h6 {
 	padding: 0;
 }
 
-h1 {font-size: 2.2rem;}
-h2 {font-size: 2.0rem;}
-h3 {font-size: 1.8rem;}
-h4 {font-size: 1.6rem;}
-h5 {font-size: 1.4rem;}
-h6 {font-size: 1.2rem;}
+h1 {
+	font-size: 2.2rem;
+}
+
+h2 {
+	font-size: 2.0rem;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h4 {
+	font-size: 1.6rem;
+}
+
+h5 {
+	font-size: 1.4rem;
+}
+
+h6 {
+	font-size: 1.2rem;
+}
 
 p {
 	margin: 0;
