@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import styled from 'styled-components';
 
-export const Layout = props => (
+export const Layout = (props) => (
   <StyledContainer>{props.children}</StyledContainer>
 );
 

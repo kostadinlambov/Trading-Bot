@@ -1,9 +1,8 @@
-import React from "react";
+import React from 'react';
 // import { toast } from 'react-toastify';
 // import { ToastComponent } from '../components/common'
 
-
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = 'http://localhost:8000';
 
 const userService = {
   getBaseUrl: () => {
@@ -11,14 +10,14 @@ const userService = {
   },
 
   isAuthenticated: () => {
-    return window.localStorage.getItem("token") !== null;
+    return window.localStorage.getItem('token') !== null;
   },
 
   getPayload: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
 
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
+      const payload = JSON.parse(atob(token.split('.')[1]));
       if (payload) {
         return payload;
       }
@@ -26,63 +25,63 @@ const userService = {
   },
 
   getUsername: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
+      const payload = JSON.parse(atob(token.split('.')[1]));
 
       if (payload) {
-        return payload["sub"];
+        return payload['sub'];
       }
     }
   },
 
   getUserId: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
+      const payload = JSON.parse(atob(token.split('.')[1]));
 
       if (payload) {
-        return payload["id"];
+        return payload['id'];
       }
     }
   },
 
   getRole: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
+      const payload = JSON.parse(atob(token.split('.')[1]));
       if (payload) {
-        return payload["role"];
+        return payload['role'];
       }
     }
   },
 
   getProfilePicUrl: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
+      const payload = JSON.parse(atob(token.split('.')[1]));
       if (payload) {
-        return payload["profilePicUrl"];
+        return payload['profilePicUrl'];
       }
     }
   },
 
   getFirstName: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
+      const payload = JSON.parse(atob(token.split('.')[1]));
       if (payload) {
-        return payload["firstName"];
+        return payload['firstName'];
       }
     }
   },
 
   isTheUserLoggedIn: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
       try {
-        const payload = JSON.parse(atob(token.split(".")[1]));
-        const role = payload["role"];
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const role = payload['role'];
 
         if (payload) {
           if (role !== null || role !== undefined) {
@@ -101,12 +100,12 @@ const userService = {
   },
 
   isLoggedInUser(username) {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
+      const payload = JSON.parse(atob(token.split('.')[1]));
 
       if (payload) {
-        const loggedInUserName = payload["sub"];
+        const loggedInUserName = payload['sub'];
         if (username === loggedInUserName) {
           return true;
         }
@@ -116,13 +115,13 @@ const userService = {
   },
 
   isRoot: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
-      const role = payload["role"];
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const role = payload['role'];
 
       if (payload) {
-        if ((role !== null || role !== undefined) && role === "ROOT") {
+        if ((role !== null || role !== undefined) && role === 'ROOT') {
           return true;
         }
       }
@@ -132,14 +131,14 @@ const userService = {
   },
 
   isAdmin: () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (token !== null && token !== undefined) {
-      const payload = JSON.parse(atob(token.split(".")[1]));
-      const role = payload["role"];
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const role = payload['role'];
       if (payload) {
         if (
           (role !== null || role !== undefined) &&
-          (role === "ADMIN" || role === "ROOT")
+          (role === 'ADMIN' || role === 'ROOT')
         ) {
           return true;
         }
@@ -150,18 +149,18 @@ const userService = {
   },
 
   checkIfIsRoot(role) {
-    if (role === "ROOT") {
+    if (role === 'ROOT') {
       return true;
     }
 
     return false;
   },
 
-  formatUsername(firstName = "", lastName = "", nameLength = 18) {
-    let name = firstName + " " + lastName;
+  formatUsername(firstName = '', lastName = '', nameLength = 18) {
+    let name = firstName + ' ' + lastName;
 
     if (name.length >= nameLength) {
-      return name.substring(0, nameLength) + "...";
+      return name.substring(0, nameLength) + '...';
     }
     return name;
   },
@@ -171,10 +170,10 @@ const userService = {
     img.src = profilePicUrl;
 
     if (img.width >= img.height) {
-      return "l";
+      return 'l';
     }
 
-    return "";
+    return '';
   },
 };
 

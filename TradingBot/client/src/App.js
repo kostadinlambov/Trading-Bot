@@ -16,54 +16,53 @@ import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 function App() {
-	const localStorageTheme = JSON.parse(localStorage.getItem('theme')) || dark;
-	debugger;
-	const [currentTheme, setCurrentTheme] = useState(localStorageTheme);
+  const localStorageTheme = JSON.parse(localStorage.getItem('theme')) || dark;
+  debugger;
+  const [currentTheme, setCurrentTheme] = useState(localStorageTheme);
 
-	localStorage.setItem('theme', JSON.stringify(currentTheme));
-	debugger;
-	const handleClick = () => {
-		debugger;
-		setCurrentTheme(currentTheme === light ? dark : light);
-		debugger;
-		localStorage.setItem('theme', JSON.stringify(currentTheme));
-	};
+  localStorage.setItem('theme', JSON.stringify(currentTheme));
+  debugger;
+  const handleClick = () => {
+    debugger;
+    setCurrentTheme(currentTheme === light ? dark : light);
+    debugger;
+    localStorage.setItem('theme', JSON.stringify(currentTheme));
+  };
 
-	document.body.style.backgroundColor = currentTheme.backgroundColor;
+  document.body.style.backgroundColor = currentTheme.backgroundColor;
 
-	return (
-		<AppContainer>
-			<ThemeProvider theme={currentTheme}>
-				<NavbarComponent changeTheme={handleClick} />
-				<ToastContainer transition={Zoom} closeButton={false} />
-				<Layout>
-					<Suspense fallback={<Loading />}>
-						<Switch>
-							<Route exact path="/" component={LandingPage} />
-							<Route exact path="/register" component={RegisterPage} />
-							<Route exact path="/login" component={LoginPage} />
-							<Route exact path="/error" component={ErrorPage} />
-							<Route component={ErrorPage} />
-						</Switch>
-					</Suspense>
-				</Layout>
-				<Footer />
-				<GlobalStyle />
-			</ThemeProvider>
-		</AppContainer>
-	);
+  return (
+    <AppContainer>
+      <ThemeProvider theme={currentTheme}>
+        <NavbarComponent changeTheme={handleClick} />
+        <ToastContainer transition={Zoom} closeButton={false} />
+        <Layout>
+          <Suspense fallback={<Loading />}>
+            <Switch>
+              <Route exact path="/" component={LandingPage} />
+              <Route exact path="/register" component={RegisterPage} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/error" component={ErrorPage} />
+              <Route component={ErrorPage} />
+            </Switch>
+          </Suspense>
+        </Layout>
+        <Footer />
+        <GlobalStyle />
+      </ThemeProvider>
+    </AppContainer>
+  );
 }
 
 export default App;
 
 const AppContainer = styled.div`
-
-	text-align: center;
-	background-color: #eee;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding-top: 5rem;
+  text-align: center;
+  background-color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
 `;

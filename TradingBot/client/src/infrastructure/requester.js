@@ -1,7 +1,7 @@
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = 'http://localhost:8000';
 
 const getAuthHeader = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
 
   return token && token.length ? { Authorization: `Bearer ${token}` } : {};
 };
@@ -10,9 +10,9 @@ const requester = {
   get: (endpoint, callback) => {
     return (
       fetch(BASE_URL + endpoint, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
           ...getAuthHeader(),
         },
       })
@@ -25,10 +25,10 @@ const requester = {
   post: (endpoint, data, callback) => {
     return (
       fetch(BASE_URL + endpoint, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
           ...getAuthHeader(),
         },
 
@@ -42,10 +42,10 @@ const requester = {
 
   put: (endpoint, data, callback) => {
     return fetch(BASE_URL + endpoint, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
         ...getAuthHeader(),
       },
       body: JSON.stringify(data),
@@ -56,10 +56,10 @@ const requester = {
 
   delete: (endpoint, data, callback) => {
     return fetch(BASE_URL + endpoint, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
         ...getAuthHeader(),
       },
       body: JSON.stringify(data),
@@ -69,17 +69,17 @@ const requester = {
   },
 
   update: (data) => {
-    return fetch(BASE_URL + "/users/update", {
-      method: "put",
+    return fetch(BASE_URL + '/users/update', {
+      method: 'put',
       body: JSON.stringify(data),
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
         ...getAuthHeader(),
       },
     })
       .then(checkStatus)
-      .then(() => console.log("updated!!!"));
+      .then(() => console.log('updated!!!'));
     // .catch(err => {
     //     console.log(err)
     // })
@@ -87,7 +87,7 @@ const requester = {
 
   addPhoto: (endpoint, data, callback) => {
     return fetch(BASE_URL + endpoint, {
-      method: "POST",
+      method: 'POST',
       headers: {
         ...getAuthHeader(),
       },
@@ -103,22 +103,22 @@ function checkStatus(response) {
     return response.json();
   } else {
     var error = new Error(response.statusText);
-    if (response.status === 403 && response.url === BASE_URL + "/login") {
-      error.message = "Incorrect credentials!";
+    if (response.status === 403 && response.url === BASE_URL + '/login') {
+      error.message = 'Incorrect credentials!';
       error.response = response;
       throw error;
-    } else if (response.status === 403 && response.type === "cors") {
-      console.log("err response: ", response);
-      error.message = "Your JWT token is expired. Please log in!";
+    } else if (response.status === 403 && response.type === 'cors') {
+      console.log('err response: ', response);
+      error.message = 'Your JWT token is expired. Please log in!';
       error.status = 403;
-      error.type = "cors";
+      error.type = 'cors';
       throw error;
     } else if (response.status === 400) {
-      console.log("err response: ", response);
-      error.message = "Error: Bad request";
+      console.log('err response: ', response);
+      error.message = 'Error: Bad request';
       // error.message = response.message
       error.status = 400;
-      error.type = "cors";
+      error.type = 'cors';
 
       throw error;
     }
