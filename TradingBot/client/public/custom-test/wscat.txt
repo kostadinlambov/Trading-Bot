@@ -1,0 +1,11 @@
+https://github.com/binance/binance-spot-api-docs/blob/master/web-socket-streams.md
+
+* wscat - connect to websocket from the command line
+# Get Trade stream from Binance API
+wscat -c wss://stream.binance.com:9443/ws/btcusdt@trade
+
+# Get Candlestick Streams stream from Binance API
+wscat -c wss://stream.binance.com:9443/ws/btcusdt@kline_5m
+
+# Save the data from Binance to a File
+wscat -c wss://stream.binance.com:9443/ws/btcusdt@kline_5m | tee custom-test/dataset.txt

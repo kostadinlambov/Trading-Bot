@@ -1,0 +1,325 @@
+[
+  {
+    "timestamp": "2021-03-20T14:49:22.887",
+    "level": "INFO",
+    "message": "Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+    "log_source_class": "org.springframework.boot.logging.DeferredLog",
+    "log_source_method": "logTo",
+    "log_source_line": 255
+  }
+  {
+    "timestamp": "2021-03-20T14:49:22.896",
+    "level": "INFO",
+    "message": "For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+    "log_source_class": "org.springframework.boot.logging.DeferredLog",
+    "log_source_method": "logTo",
+    "log_source_line": 255
+  }
+  {
+    "timestamp": "2021-03-20T14:49:24.381",
+    "level": "INFO",
+    "message": "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+    "log_source_class": "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+    "log_source_method": "registerRepositoriesIn",
+    "log_source_line": 128
+  }
+  {
+    "timestamp": "2021-03-20T14:49:24.501",
+    "level": "INFO",
+    "message": "Finished Spring Data repository scanning in 108 ms. Found 2 JPA repository interfaces.",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+    "log_source_class": "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+    "log_source_method": "registerRepositoriesIn",
+    "log_source_line": 188
+  }
+  {
+    "timestamp": "2021-03-20T14:49:24.932",
+    "level": "INFO",
+    "message": "Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59d5a35b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker",
+    "log_source_class": "org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker",
+    "log_source_method": "postProcessAfterInitialization",
+    "log_source_line": 376
+  }
+  {
+    "timestamp": "2021-03-20T14:49:24.937",
+    "level": "INFO",
+    "message": "Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker",
+    "log_source_class": "org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker",
+    "log_source_method": "postProcessAfterInitialization",
+    "log_source_line": 376
+  }
+  {
+    "timestamp": "2021-03-20T14:49:25.305",
+    "level": "INFO",
+    "message": "Tomcat initialized with port(s): 8000 (http)",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+    "log_source_class": "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+    "log_source_method": "initialize",
+    "log_source_line": 108
+  }
+  {
+    "timestamp": "2021-03-20T14:49:25.515",
+    "level": "INFO",
+    "message": "Root WebApplicationContext: initialization completed in 2616 ms",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+    "log_source_class": "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+    "log_source_method": "prepareWebApplicationContext",
+    "log_source_line": 289
+  }
+  {
+    "timestamp": "2021-03-20T14:49:25.839",
+    "level": "INFO",
+    "message": "Flyway Community Edition 7.1.1 by Redgate",
+    "thread_name": "restartedMain",
+    "logger_name": "org.flywaydb.core.internal.license.VersionPrinter",
+    "log_source_class": "org.flywaydb.core.internal.logging.slf4j.Slf4jLog",
+    "log_source_method": "info",
+    "log_source_line": 49
+  }
+  {
+    "timestamp": "2021-03-20T14:49:25.845",
+    "level": "INFO",
+    "message": "HikariPool-1 - Starting...",
+    "thread_name": "restartedMain",
+    "logger_name": "com.zaxxer.hikari.HikariDataSource",
+    "log_source_class": "com.zaxxer.hikari.HikariDataSource",
+    "log_source_method": "getConnection",
+    "log_source_line": 110
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.031",
+    "level": "INFO",
+    "message": "HikariPool-1 - Start completed.",
+    "thread_name": "restartedMain",
+    "logger_name": "com.zaxxer.hikari.HikariDataSource",
+    "log_source_class": "com.zaxxer.hikari.HikariDataSource",
+    "log_source_method": "getConnection",
+    "log_source_line": 123
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.044",
+    "level": "INFO",
+    "message": "Database: jdbc:mysql://localhost:3306/trading_bot_db (MySQL 5.5)",
+    "thread_name": "restartedMain",
+    "logger_name": "org.flywaydb.core.internal.database.base.DatabaseType",
+    "log_source_class": "org.flywaydb.core.internal.logging.slf4j.Slf4jLog",
+    "log_source_method": "info",
+    "log_source_line": 49
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.161",
+    "level": "INFO",
+    "message": "Successfully validated 1 migration (execution time 00:00.044s)",
+    "thread_name": "restartedMain",
+    "logger_name": "org.flywaydb.core.internal.command.DbValidate",
+    "log_source_class": "org.flywaydb.core.internal.logging.slf4j.Slf4jLog",
+    "log_source_method": "info",
+    "log_source_line": 49
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.196",
+    "level": "INFO",
+    "message": "Current version of schema `trading_bot_db`: 001",
+    "thread_name": "restartedMain",
+    "logger_name": "org.flywaydb.core.internal.command.DbMigrate",
+    "log_source_class": "org.flywaydb.core.internal.logging.slf4j.Slf4jLog",
+    "log_source_method": "info",
+    "log_source_line": 49
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.200",
+    "level": "INFO",
+    "message": "Schema `trading_bot_db` is up to date. No migration necessary.",
+    "thread_name": "restartedMain",
+    "logger_name": "org.flywaydb.core.internal.command.DbMigrate",
+    "log_source_class": "org.flywaydb.core.internal.logging.slf4j.Slf4jLog",
+    "log_source_method": "info",
+    "log_source_line": 49
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.323",
+    "level": "INFO",
+    "message": "HHH000204: Processing PersistenceUnitInfo [name: default]",
+    "thread_name": "restartedMain",
+    "logger_name": "org.hibernate.jpa.internal.util.LogHelper",
+    "log_source_class": "org.hibernate.jpa.internal.util.LogHelper",
+    "log_source_method": "logPersistenceUnitInformation",
+    "log_source_line": 31
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.372",
+    "level": "INFO",
+    "message": "HHH000412: Hibernate ORM core version 5.4.28.Final",
+    "thread_name": "restartedMain",
+    "logger_name": "org.hibernate.Version",
+    "log_source_class": "org.hibernate.Version",
+    "log_source_method": "logVersion",
+    "log_source_line": 44
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.509",
+    "level": "INFO",
+    "message": "HCANN000001: Hibernate Commons Annotations {5.1.2.Final}",
+    "thread_name": "restartedMain",
+    "logger_name": "org.hibernate.annotations.common.Version",
+    "log_source_class": "org.hibernate.annotations.common.reflection.java.JavaReflectionManager",
+    "log_source_method": "<clinit>",
+    "log_source_line": 56
+  }
+  {
+    "timestamp": "2021-03-20T14:49:26.616",
+    "level": "INFO",
+    "message": "HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect",
+    "thread_name": "restartedMain",
+    "logger_name": "org.hibernate.dialect.Dialect",
+    "log_source_class": "org.hibernate.dialect.Dialect",
+    "log_source_method": "<init>",
+    "log_source_line": 175
+  }
+  {
+    "timestamp": "2021-03-20T14:49:27.290",
+    "level": "INFO",
+    "message": "HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]",
+    "thread_name": "restartedMain",
+    "logger_name": "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+    "log_source_class": "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+    "log_source_method": "initiateService",
+    "log_source_line": 52
+  }
+  {
+    "timestamp": "2021-03-20T14:49:27.299",
+    "level": "INFO",
+    "message": "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+    "log_source_class": "org.springframework.orm.jpa.AbstractEntityManagerFactoryBean",
+    "log_source_method": "buildNativeEntityManagerFactory",
+    "log_source_line": 437
+  }
+  {
+    "timestamp": "2021-03-20T14:49:27.342",
+    "level": "INFO",
+    "message": "LiveReload server is running on port 35729",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+    "log_source_class": "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+    "log_source_method": "startServer",
+    "log_source_line": 58
+  }
+  {
+    "timestamp": "2021-03-20T14:49:27.949",
+    "level": "WARN",
+    "message": "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+    "log_source_class": "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+    "log_source_method": "openEntityManagerInViewInterceptor",
+    "log_source_line": 221
+  }
+  {
+    "timestamp": "2021-03-20T14:49:28.128",
+    "level": "DEBUG",
+    "message": "\r\n    select\r\n        count(*) as col_0_0_ \r\n    from\r\n        roles userroleen0_",
+    "thread_name": "restartedMain",
+    "logger_name": "org.hibernate.SQL",
+    "log_source_class": "org.hibernate.engine.jdbc.spi.SqlStatementLogger",
+    "log_source_method": "logStatement",
+    "log_source_line": 144
+  }
+  {
+    "timestamp": "2021-03-20T14:49:28.267",
+    "level": "INFO",
+    "message": "Will secure Ant [pattern='/socket/**'] with []",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.security.web.DefaultSecurityFilterChain",
+    "log_source_class": "org.springframework.security.web.DefaultSecurityFilterChain",
+    "log_source_method": "<init>",
+    "log_source_line": 51
+  }
+  {
+    "timestamp": "2021-03-20T14:49:28.326",
+    "level": "INFO",
+    "message": "Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e5e1cb3, org.springframework.security.web.context.SecurityContextPersistenceFilter@450734de, org.springframework.security.web.header.HeaderWriterFilter@438b9375, org.springframework.web.filter.CorsFilter@70efc44d, org.springframework.security.web.authentication.logout.LogoutFilter@4a55c55e, com.kl.tradingbot.common.filters.JwtAuthenticationFilter@6e9baa8f, com.kl.tradingbot.common.filters.JwtAuthorizationFilter@2ea68f33, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46280057, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@45e43df3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4073b5d0, org.springframework.security.web.session.SessionManagementFilter@65e82a49, org.springframework.security.web.access.ExceptionTranslationFilter@4c57a398, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3aba9ca1]",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.security.web.DefaultSecurityFilterChain",
+    "log_source_class": "org.springframework.security.web.DefaultSecurityFilterChain",
+    "log_source_method": "<init>",
+    "log_source_line": 51
+  }
+  {
+    "timestamp": "2021-03-20T14:49:28.418",
+    "level": "INFO",
+    "message": "Initializing ExecutorService 'applicationTaskExecutor'",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor",
+    "log_source_class": "org.springframework.scheduling.concurrent.ExecutorConfigurationSupport",
+    "log_source_method": "initialize",
+    "log_source_line": 181
+  }
+  {
+    "timestamp": "2021-03-20T14:49:28.842",
+    "level": "INFO",
+    "message": "Exposing 2 endpoint(s) beneath base path '/actuator'",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver",
+    "log_source_class": "org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver",
+    "log_source_method": "<init>",
+    "log_source_line": 58
+  }
+  {
+    "timestamp": "2021-03-20T14:49:28.936",
+    "level": "INFO",
+    "message": "Tomcat started on port(s): 8000 (http) with context path ''",
+    "thread_name": "restartedMain",
+    "logger_name": "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+    "log_source_class": "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+    "log_source_method": "start",
+    "log_source_line": 220
+  }
+  {
+    "timestamp": "2021-03-20T14:49:31.632",
+    "level": "INFO",
+    "message": "Initializing Servlet 'dispatcherServlet'",
+    "thread_name": "RMI TCP Connection(2)-169.254.46.143",
+    "logger_name": "org.springframework.web.servlet.DispatcherServlet",
+    "log_source_class": "org.springframework.web.servlet.FrameworkServlet",
+    "log_source_method": "initServletBean",
+    "log_source_line": 525
+  }
+  {
+    "timestamp": "2021-03-20T14:49:31.637",
+    "level": "INFO",
+    "message": "Completed initialization in 4 ms",
+    "thread_name": "RMI TCP Connection(2)-169.254.46.143",
+    "logger_name": "org.springframework.web.servlet.DispatcherServlet",
+    "log_source_class": "org.springframework.web.servlet.FrameworkServlet",
+    "log_source_method": "initServletBean",
+    "log_source_line": 547
+  },
+  {
+    "e": "trade",
+    "E": 1617574385727,
+    "s": "BTCUSDT",
+    "t": 745624090,
+    "p": "57935.61000000",
+    "q": "0.00073500",
+    "b": 5446147156,
+    "a": 5446145973,
+    "T": 1617574385717,
+    "m": false,
+    "M": true
+  }
+]
