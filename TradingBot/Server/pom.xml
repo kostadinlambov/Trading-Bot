@@ -109,6 +109,20 @@
       <version>5.1.5.RELEASE</version>
     </dependency>
 
+    <!-- Binance api client -->
+    <dependency>
+      <groupId>tr.com.lucidcode</groupId>
+      <artifactId>binance-api-client</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- ta4j is a Java library providing a simple API for technical analysis. -->
+    <dependency>
+      <groupId>org.ta4j</groupId>
+      <artifactId>ta4j-core</artifactId>
+      <version>0.13</version>
+    </dependency>
+
     <!--Tests dependencies-->
     <dependency>
       <artifactId>spring-security-test</artifactId>

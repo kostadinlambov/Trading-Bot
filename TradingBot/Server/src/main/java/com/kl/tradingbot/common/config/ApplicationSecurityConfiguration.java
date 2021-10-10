@@ -55,7 +55,8 @@ public class ApplicationSecurityConfiguration
             "/**/*.jpg",
             "/**/*.html",
             "/**/*.css",
-            "/**/*.js"
+            "/**/*.js",
+            "/api/binance/getBinanceDataForUser/*"
         ).permitAll()
         .antMatchers(
             "/api/user/details/*",
@@ -98,7 +99,7 @@ public class ApplicationSecurityConfiguration
     config.setAllowCredentials(true);
 //    config.addAllowedOrigin("*");
 //    config.addAllowedOriginPattern("*");
-    config.addAllowedOriginPattern("http://localhost:3000");
+    config.addAllowedOriginPattern("http://localhost:3300");
     config.addAllowedHeader("*");
     config.addAllowedMethod("OPTIONS");
     config.addAllowedMethod("HEAD");
